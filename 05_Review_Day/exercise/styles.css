@@ -15,24 +15,30 @@ nav ul li {
     border-radius: 5px;
     text-align: center;
     line-height: 50px;
-    /*display: flex;*/
+    display: inline-flex;
     flex-direction: row;
+    grid-area: nav-li;
+    
 }
 #li1
 {
     grid-area: li1;
+    
 }
 #li2
 {
     grid-area: li2;
+    
 }
 #li3{
     grid-area: li3;
+    white-space: nowrap;
+   
 }
 .header{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "header-img h1 li1 li2 li3";
+    grid-template-columns: 1fr 1fr 3fr;
+    grid-template-areas: "header-img h1 nav-li";
     
 }
 header img {

@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #87CEEB;
+}
+
+nav ul {
+    margin: 0;
+    padding: 20px 0 0 0;
+}
+
+nav ul li {
+    list-style: none;
+    width: 30%;
+    background-color: #00afef;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 50px;
+}
+
+header img {
+    height: 100px;
+    width: auto;
+}
+header h1 {
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+main img {
+    object-fit: cover;
+    margin-right: 20px;
+    height: 350px;
+    width: 35%;
+}
+
+/* li:before - The :before selector inserts something before the content of each selected element(s).
+https://www.w3schools.com/cssref/sel_before.asp */
+
+main li:before {
+    content: '🍡';
+    margin-left: -31px;
+    padding-right: 8px;
+}
+
+main, section, footer {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.store-button { /* used for store link in "Get refreshed" section */
+    width: 25%;
+    padding: 10px;
+    border-radius: 5px;
+    color: #000000;
+    background-color: #00afef;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}

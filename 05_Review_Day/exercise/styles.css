@@ -15,29 +15,25 @@ nav ul li {
     border-radius: 5px;
     text-align: center;
     line-height: 50px;
-    display: inline-flex;
+    display: inline-block;
     flex-direction: row;
     grid-area: nav-li;
     
-}
-#li1
-{
-    grid-area: li1;
     
 }
-#li2
-{
-    grid-area: li2;
-    
+#li1{
+    margin: 8px;
+}
+#li2{
+    margin: 8px;
 }
 #li3{
-    grid-area: li3;
-    white-space: nowrap;
-   
+    margin: 8px;
 }
+
 .header{
     display: grid;
-    grid-template-columns: 1fr 1fr 3fr;
+    grid-template-columns: .25fr 2.25fr 2.5fr;
     grid-template-areas: "header-img h1 nav-li";
     
 }
@@ -47,31 +43,98 @@ header img {
     grid-area: header-img;
 }
 header h1 {
-    padding-left: 20px;
+    padding-left: -20px;
     padding-top: 10px;
     grid-area: h1;
 }
-
+main{
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    grid-template-areas: 
+    "main-img main-h2"
+    "main-img main-li"
+    ;
+}
 main img {
     object-fit: cover;
     margin-right: 20px;
     height: 350px;
-    width: 35%;
+    width: 100%;
+    grid-area: main-img;
+}
+main h2{
+    grid-area: main-h2;
+    padding-top: 75px;
+    margin-left: 30px;
+
 }
 
 /* li:before - The :before selector inserts something before the content of each selected element(s).
 https://www.w3schools.com/cssref/sel_before.asp */
+main li{
+list-style-type: none;
+font-size: 14px;
+padding: 4px;
+ margin-left: 30px;
 
+}
+main ul{
+    padding-bottom: 70px;
+}
 main li:before {
     content: '🍡';
     margin-left: -31px;
     padding-right: 8px;
+    grid-area: main-li;
+   
 }
-
-main, section, footer {
+section{
+    display:grid;
+    grid-area: section;
+    grid-template-columns: 1fr  1fr;
+    grid-template-areas: "race refreshed";
+    
+    
+}
+section img{
+    grid-area: section-img;
+    width: 120%;
+}
+#popsicle-race{
+    display:grid;
+    grid-area: race;
+    grid-template-columns: .25fr 1fr;
+    grid-template-areas: "section-img race-h2" "section-img race-p";
+   
+}
+div#popsicle-race p {
+    grid-area: race-p;
+    font-size: 14px;
+}
+div#popsicle-race h2{
+    grid-area: race-h2;
+    text-align: center;
+}
+div#refreshed p {
+    grid-area: refreshed-p;
+    font-size: 14px;
+}
+div#refreshed h2{
+    grid-area: refreshed-h2;
+    text-align: center;
+}
+#refreshed{
+    display:grid;
+    grid-area: refreshed;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:"" ;
+   
+}
+main, section, footer,#refreshed,#popsicle-race{
     background-color: #ffffff;
     border-radius: 5px;
     padding: 20px;
+    margin: 4px;
 }
 
 .store-button { /* used for store link in "Get refreshed" section */

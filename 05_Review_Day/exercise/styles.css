@@ -18,7 +18,7 @@ nav ul li {
     display: inline-block;
     flex-direction: row;
     grid-area: nav-li;
-    
+   
     
 }
 #li1{
@@ -30,7 +30,14 @@ nav ul li {
 #li3{
     margin: 8px;
 }
-
+#li3 a{
+    text-decoration: none;
+    color: #000000;
+}
+#li1 a{
+    text-decoration: none;
+    color: #000000;
+}
 .header{
     display: grid;
     grid-template-columns: .25fr 2.25fr 2.5fr;
@@ -123,11 +130,17 @@ div#refreshed h2{
     grid-area: refreshed-h2;
     text-align: center;
 }
+div#refreshed button{
+    grid-area: refreshed-button;
+    margin-left: 200px;
+}
 #refreshed{
     display:grid;
     grid-area: refreshed;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:"" ;
+    grid-template-columns: 1fr;
+    grid-template-areas:"refreshed-h2"
+    "refreshed-p"
+     "refreshed-button";
    
 }
 main, section, footer,#refreshed,#popsicle-race{
@@ -146,4 +159,60 @@ main, section, footer,#refreshed,#popsicle-race{
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
+}
+
+#contact-main {
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "h1" 
+    "form ";
+}
+
+#contact-main h1{
+    grid-area: h1;
+}
+#contact-main form{
+    grid-area: form;
+    
+}
+#contact-main input{
+    margin-bottom: 10px;
+    margin-top: 5px;
+    
+}
+#name{
+    width:302px;
+}
+#contact-main select{
+    margin-bottom: 10px;
+    margin-top: 5px;
+    width: 310px;
+    height: 25px;
+}
+#color{
+    width: 310px;
+}
+#comments{
+    width: 500px;
+    height: 200px;
+    
+}
+#submit-button{
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #00afef;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+}
+@media screen and (max-width: 800px) {
+    .header{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: "header-img h1"
+        "nav-li .";
+    }
+    
 }

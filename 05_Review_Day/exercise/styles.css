@@ -6,6 +6,7 @@ body {
 nav ul {
     margin: 0;
     padding: 20px 0 0 0;
+    grid-area: nav-ul;
 }
 
 nav ul li {
@@ -23,12 +24,15 @@ nav ul li {
 }
 #li1{
     margin: 8px;
+    grid-area: li1;
 }
 #li2{
     margin: 8px;
+    grid-area: li2;
 }
 #li3{
     margin: 8px;
+    grid-area: li3;
 }
 #li3 a{
     text-decoration: none;
@@ -98,8 +102,9 @@ main li:before {
 section{
     display:grid;
     grid-area: section;
-    grid-template-columns: 1fr  1fr;
+    grid-template-columns: auto auto;
     grid-template-areas: "race refreshed";
+    border-left: 2px solid #87CEEB;
     
     
 }
@@ -131,8 +136,10 @@ div#refreshed h2{
     text-align: center;
 }
 div#refreshed button{
+    display: flex;
     grid-area: refreshed-button;
-    margin-left: 200px;
+    justify-content: center;
+    align-items: center;
 }
 #refreshed{
     display:grid;
@@ -141,6 +148,8 @@ div#refreshed button{
     grid-template-areas:"refreshed-h2"
     "refreshed-p"
      "refreshed-button";
+     justify-items: center;
+     
    
 }
 main, section, footer,#refreshed,#popsicle-race{
@@ -210,9 +219,45 @@ main, section, footer,#refreshed,#popsicle-race{
 @media screen and (max-width: 800px) {
     .header{
         display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-areas: "header-img h1"
-        "nav-li .";
+    grid-template-columns: max-content max-content max-content;
+    grid-template-areas: "header-img h1 h1"
+     "li1 li2 li3";
     }
+    nav{
+        display: flex;
+        justify-content: space-evenly;
+        justify-items: flex-end;
+        flex-grow: 1;
+    }
+    main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "main-img"
+        "main-h2"
+        "main-li";
+    }
+    main h2{
+        margin-left: 2px;
+        padding-top: 2px;
+    }
+    main ul li{
+        margin-left: 2px;
+        padding-top: 2px;
+    }
+    #popsicle-race{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "section-img race-h2"
+        "race-p race-p";
+    }
+    #refreshed{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "refreshed-h2"
+        "refreshed-p"
+        "refreshed-button";
+    }
+    
+    
     
 }

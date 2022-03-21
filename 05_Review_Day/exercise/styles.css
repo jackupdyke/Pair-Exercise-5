@@ -1,14 +1,37 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #87CEEB;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header nav"
+    "main main"
+    "pr rs"
+    "footer footer";
 }
-
+/*header(pic/title) nav (3buttons)*/
+nav{
+    grid-area: nav;
+}
 nav ul {
     margin: 0;
     padding: 20px 0 0 0;
-    grid-area: nav-ul;
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
 }
-
+a,
+a:hover{
+  color:white;
+}
+a:visited{
+  color:black;
+  text-decoration: none;
+}
+a{
+  color:black;
+  text-decoration: none;
+  font-weight: bold;
+} 
 nav ul li {
     list-style: none;
     width: 30%;
@@ -43,10 +66,12 @@ nav ul li {
     color: #000000;
 }
 .header{
-    display: grid;
+     display: flex;
+     /*
     grid-template-columns: .25fr 2.25fr 2.5fr;
-    grid-template-areas: "header-img h1 nav-li";
-    
+    grid-template-areas: "header-img h1 nav-li"; */
+    grid-area: header;
+    align-items: center;
 }
 header img {
     height: 100px;
@@ -59,18 +84,23 @@ header h1 {
     grid-area: h1;
 }
 main{
-    display: grid;
+    /* display: grid;
     grid-template-columns: .8fr 1.2fr;
     grid-template-areas: 
     "main-img main-h2"
     "main-img main-li"
-    ;
+    ; */
+    grid-area: main;
+    display: flex;
+    flex-direction: row;
 }
 main img {
     object-fit: cover;
     margin-right: 20px;
     height: 350px;
     width: 100%;
+    max-width: max-content;
+    min-width: min-content;
     grid-area: main-img;
 }
 main h2{
@@ -99,7 +129,13 @@ main li:before {
     grid-area: main-li;
    
 }
-section{
+#pop-race-section{
+    grid-area: pr;
+}
+#refreshed-section{
+    grid-area: rs;
+}
+/* section{
     display:grid;
     grid-area: section;
     grid-template-columns: auto auto;
@@ -107,19 +143,21 @@ section{
     border-left: 2px solid #87CEEB;
     
     
-}
-section img{
+} */
+
+/* section img{
     grid-area: section-img;
     width: 120%;
-}
+} */
 #popsicle-race{
-    display:grid;
-    grid-area: race;
+    display:flex;
+    flex-direction: column;
+     /* grid-area: race; 
     grid-template-columns: .25fr 1fr;
-    grid-template-areas: "section-img race-h2" "section-img race-p";
+    grid-template-areas: "section-img race-h2" "section-img race-p";  */
    
 }
-div#popsicle-race p {
+/* div#popsicle-race p {
     grid-area: race-p;
     font-size: 14px;
 }
@@ -140,19 +178,17 @@ div#refreshed button{
     grid-area: refreshed-button;
     justify-content: center;
     align-items: center;
-}
+} */
 #refreshed{
-    display:grid;
-    grid-area: refreshed;
-    grid-template-columns: 1fr;
-    grid-template-areas:"refreshed-h2"
-    "refreshed-p"
-     "refreshed-button";
-     justify-items: center;
-     
-   
+    display:flex;
+    flex-direction: column;
+    /* grid-area: refreshed; */
+    justify-items: center;
+    
 }
-main, section, footer,#refreshed,#popsicle-race{
+main, section, footer{
+    display: flex;
+    align-items: center;
     background-color: #ffffff;
     border-radius: 5px;
     padding: 20px;
@@ -168,6 +204,7 @@ main, section, footer,#refreshed,#popsicle-race{
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
+    align-self: center;
 }
 
 #contact-main {
@@ -216,13 +253,25 @@ main, section, footer,#refreshed,#popsicle-race{
     text-align: center;
     border: none;
 }
+footer{
+    grid-area: footer;
+}
 @media screen and (max-width: 800px) {
-    .header{
+    body{
+        grid-template-columns: 1fr;
+        grid-template-areas: "header"
+        "nav"
+        "main"
+        "pr"
+        "rs"
+        "footer";
+    }
+    /* .header{
         display: grid;
     grid-template-columns: max-content max-content max-content;
     grid-template-areas: "header-img h1 h1"
      "li1 li2 li3";
-    }
+    } */
     nav{
         display: flex;
         justify-content: space-evenly;
@@ -244,7 +293,7 @@ main, section, footer,#refreshed,#popsicle-race{
         margin-left: 2px;
         padding-top: 2px;
     }
-    #popsicle-race{
+    /* #popsicle-race{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "section-img race-h2"
@@ -256,7 +305,7 @@ main, section, footer,#refreshed,#popsicle-race{
         grid-template-areas: "refreshed-h2"
         "refreshed-p"
         "refreshed-button";
-    }
+    } */
     
     
     
